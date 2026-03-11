@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Vyrva Sound Engineer HTML template",
   "scripts": {
-    "build": "sass src/scss/main.scss dist/css/main.css --style=compressed --no-source-map",
-    "build:dev": "sass src/scss/main.scss dist/css/main.css --style=expanded",
-    "watch": "sass src/scss/main.scss dist/css/main.css --style=expanded --watch"
+    "copy:assets": "xcopy src\\images dist\\images /E /I /Y /Q && xcopy src\\music dist\\music /E /I /Y /Q && xcopy src\\js dist\\js /E /I /Y /Q && copy index-sound-engineer.html dist\\index.html /Y",
+    "build": "npm run copy:assets && sass src/scss/main.scss dist/css/main.css --style=compressed --no-source-map",
+    "build:dev": "npm run copy:assets && sass src/scss/main.scss dist/css/main.css --style=expanded",
+    "watch": "npm run copy:assets && sass src/scss/main.scss dist/css/main.css --style=expanded --watch"
   },
   "devDependencies": {
     "sass": "^1.72.0"

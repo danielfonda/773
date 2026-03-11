@@ -53,17 +53,33 @@
   }
 }
 
-.nav-social {
+.nav-cta {
   display: flex;
-  gap: 16px;
   align-items: center;
+}
 
-  a {
-    color: $text-dim;
-    font-size: 0.85rem;
-    transition: color 0.3s;
+.nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 22px;
+  background: $gradient;
+  color: $bg-base;
+  font-family: $font-heading;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 3px;
+  box-shadow: $glow-mixed;
+  transition: $transition-base;
+  white-space: nowrap;
 
-    &:hover { color: $accent; }
+  i { font-size: 0.85rem; }
+
+  &:hover {
+    opacity: 0.9;
+    box-shadow: $glow-blue, 0 4px 20px rgba(0, 212, 255, 0.3);
+    transform: translateY(-1px);
   }
 }
 
