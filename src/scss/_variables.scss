@@ -3,21 +3,27 @@
 // ============================
 
 // Colors
-$accent:        #e8c84a;
-$bg-base:       #0d0d0d;
-$bg-dark:       #0a0a0a;
-$bg-card:       #141414;
-$bg-card-2:     #171717;
-$bg-input:      #1a1a1a;
-$bg-overlay:    #111;
+$accent:        #00d4ff;
+$accent-alt:    #b44dff;
+$gradient:      linear-gradient(135deg, $accent 0%, $accent-alt 100%);
+$gradient-rev:  linear-gradient(135deg, $accent-alt 0%, $accent 100%);
+$glow-blue:     0 0 20px rgba(0, 212, 255, 0.3);
+$glow-purple:   0 0 20px rgba(180, 77, 255, 0.3);
+$glow-mixed:    0 0 20px rgba(0, 212, 255, 0.25), 0 0 40px rgba(180, 77, 255, 0.15);
+$bg-base:       #0a0b14;
+$bg-dark:       #07080f;
+$bg-card:       #0f1019;
+$bg-card-2:     #12131e;
+$bg-input:      #151622;
+$bg-overlay:    #0c0d17;
 $text-primary:  #fff;
 $text-muted:    #ccc;
 $text-subtle:   #aaa;
 $text-dim:      #888;
 $text-faint:    #666;
 $text-ghost:    #555;
-$border-subtle: rgba(255, 255, 255, 0.07);
-$border-faint:  rgba(255, 255, 255, 0.05);
+$border-subtle: rgba(0, 212, 255, 0.1);
+$border-faint:  rgba(0, 212, 255, 0.06);
 $success:       #4ade80;
 
 // Typography

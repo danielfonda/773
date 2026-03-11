@@ -20,15 +20,19 @@
   margin-bottom: 14px;
 
   span {
-    color: $accent;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
 .section-divider {
   width: 48px;
   height: 3px;
-  background: $accent;
+  background: $gradient;
   margin-bottom: 40px;
+  border-radius: 2px;
 }
 
 // ---- Buttons ----
@@ -43,25 +47,29 @@
   transition: $transition-base;
 
   &-primary {
-    background: $accent;
+    background: $gradient;
     color: $bg-base;
-    border: 2px solid $accent;
+    border: 2px solid transparent;
+    box-shadow: $glow-mixed;
 
     &:hover {
       background: transparent;
       color: $accent;
+      border-color: $accent;
+      box-shadow: $glow-blue;
     }
   }
 
   &-outline {
     background: transparent;
     color: $text-primary;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(0, 212, 255, 0.3);
     margin-left: 14px;
 
     &:hover {
       border-color: $accent;
       color: $accent;
+      box-shadow: $glow-blue;
     }
   }
 }

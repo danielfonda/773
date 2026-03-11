@@ -23,7 +23,10 @@
     font-size: 2.4rem;
     font-weight: 700;
     font-family: $font-heading;
-    color: $accent;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1;
   }
 

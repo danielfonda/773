@@ -26,12 +26,12 @@
   &:hover {
     transform: translateY(-8px);
     border-color: $accent;
-    box-shadow: 0 20px 50px rgba($accent, 0.1);
+    box-shadow: $glow-mixed;
   }
 
   &.featured {
-    border-color: $accent;
-    box-shadow: 0 20px 50px rgba($accent, 0.12);
+    border-color: $accent-alt;
+    box-shadow: $glow-mixed;
     transform: translateY(-8px);
   }
 
@@ -49,7 +49,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: $accent;
+  background: $gradient;
   color: $bg-base;
   font-size: 0.65rem;
   font-weight: 700;
@@ -57,6 +57,7 @@
   text-transform: uppercase;
   padding: 5px 18px;
   border-radius: 20px;
+  box-shadow: $glow-mixed;
 }
 
 .price {
@@ -71,7 +72,10 @@
     font-size: 1.4rem;
     vertical-align: top;
     margin-top: 8px;
-    color: $accent;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 

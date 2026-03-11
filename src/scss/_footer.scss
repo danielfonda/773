@@ -20,7 +20,12 @@ footer {
     color: $text-primary;
     letter-spacing: 2px;
 
-    span { color: $accent; }
+    span {
+      background: $gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   }
 
   .copy {

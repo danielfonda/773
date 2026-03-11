@@ -50,10 +50,11 @@
   }
 
   &:hover {
-    background: $accent;
+    background: $gradient;
     color: $bg-base;
     border-color: $accent;
     transform: translateY(-4px);
+    box-shadow: $glow-mixed;
   }
 }
 
