@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vyrva – Sound Engineer</title>
+  <title>773Ai Music Production – Pesmi po naročilu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -14,21 +14,20 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container inner">
-      <a href="#" class="logo">Vyrva<span>.</span></a>
+      <a href="#" class="logo">773MusicPro<span>.</span></a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#pricing">Services</a></li>
-        <li><a href="#tracks">Tracks</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">Domov</a></li>
+        <li><a href="#how">Kako nastane</a></li>
+        <li><a href="#occasions">Priložnosti</a></li>
+        <li><a href="#listen">Primeri</a></li>
+        <li><a href="#why">Zakaj mi</a></li>
+        <li><a href="#contact">Kontakt</a></li>
       </ul>
       <div class="nav-social">
-        <a href="#"><i class="fab fa-soundcloud"></i></a>
-        <a href="#"><i class="fab fa-spotify"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:773musicpro@gmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+38631670246" aria-label="Telefon"><i class="fas fa-phone"></i></a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Odpri meni">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -37,374 +36,262 @@
   <!-- Mobile nav -->
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-nav-close" id="navClose"><i class="fas fa-times"></i></button>
-    <a href="#home" class="mob-link">Home</a>
-    <a href="#pricing" class="mob-link">Services</a>
-    <a href="#tracks" class="mob-link">Tracks</a>
-    <a href="#about" class="mob-link">About</a>
-    <a href="#contact" class="mob-link">Contact</a>
+    <a href="#home" class="mob-link">Domov</a>
+    <a href="#how" class="mob-link">Kako nastane</a>
+    <a href="#occasions" class="mob-link">Priložnosti</a>
+    <a href="#listen" class="mob-link">Primeri</a>
+    <a href="#why" class="mob-link">Zakaj mi</a>
+    <a href="#contact" class="mob-link">Kontakt</a>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">Professional Sound Engineer</p>
-        <h1>Mixing &amp;<br /><em>Mastering</em><br />Studio</h1>
-        <p>World-class mixing and mastering services tailored to your vision. From Lo-Fi Hip Hop to cinematic soundscapes, bring your music to life.</p>
+    <div class="hero-inner hero-inner--centered">
+      <div class="hero-text hero-text--wide">
+        <p class="eyebrow">🎶 773Ai Music Production</p>
+        <h1>Pesmi po naročilu,<br /><em>ustvarjene posebej zate</em></h1>
+        <p>Iščeš unikatno darilo, ki pusti vtis in sproži čustva? Pri 773Ai Music Production ustvarjamo personalizirane AI pesmi po naročilu, prilagojene tvoji zgodbi, tvojemu sporočilu in posebnemu trenutku.</p>
+        <p class="hero-highlight">Ne gre za generično glasbo.<br />Gre za pesem, ki pove točno to, kar ti želiš povedati.</p>
         <div class="cta-group">
-          <a href="#pricing" class="btn btn-primary">Get Started</a>
-          <a href="#tracks" class="btn btn-outline">Listen Now</a>
-        </div>
-      </div>
-
-      <!-- Featured player card -->
-      <div class="player-card">
-        <div class="album-cover">
-          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop" alt="Overexposed album" />
-          <span class="album-badge">Featured</span>
-        </div>
-        <div class="album-info">
-          <h4>Overexposed</h4>
-          <span>Album by Maroon 5</span>
-        </div>
-        <div class="player-controls">
-          <span class="track-name">Nightcrawler</span>
-          <div class="progress-bar-wrap" id="heroProgress">
-            <div class="progress-bar-fill" id="heroFill"></div>
-            <div class="progress-bar-handle" id="heroHandle"></div>
-          </div>
-          <div class="player-row">
-            <button class="ctrl-btn"><i class="fas fa-random"></i></button>
-            <button class="ctrl-btn"><i class="fas fa-step-backward"></i></button>
-            <button class="ctrl-btn play-btn" id="heroPlay">
-              <i class="fas fa-play" id="heroPlayIcon"></i>
-            </button>
-            <button class="ctrl-btn"><i class="fas fa-step-forward"></i></button>
-            <button class="ctrl-btn"><i class="fas fa-redo"></i></button>
-            <span class="time-display"><span id="heroTime">00:00</span> / 03:35</span>
-          </div>
+          <a href="#contact" class="btn btn-primary">Naroči pesem</a>
+          <a href="#listen" class="btn btn-outline">Poslušaj primere</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="container inner">
-      <div class="stat-item">
-        <span class="number" data-target="1200">0</span>
-        <span class="label">Tracks Mixed</span>
-      </div>
-      <div class="stat-item">
-        <span class="number" data-target="340">0</span>
-        <span class="label">Albums Mastered</span>
-      </div>
-      <div class="stat-item">
-        <span class="number" data-target="98">0</span>
-        <span class="label">Happy Clients</span>
-      </div>
-      <div class="stat-item">
-        <span class="number" data-target="12">0</span>
-        <span class="label">Years Experience</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- PRICING -->
-  <section class="section pricing" id="pricing">
+  <!-- HOW IT WORKS -->
+  <section class="section pricing center-section" id="how">
     <div class="container">
-      <h2 class="section-title">Mix &amp; <span>Mastering</span></h2>
+      <h2 class="section-title">Navdih iz znanih skladb, <span>tvoja zgodba</span></h2>
       <div class="section-divider"></div>
+      <p class="section-intro">Naše pesmi nastajajo:</p>
       <div class="pricing-grid">
 
         <div class="pricing-card">
-          <h3>Basic</h3>
-          <div class="price"><sup>$</sup>49</div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Mixing</li>
-            <li><i class="fas fa-check"></i> Mastering</li>
-            <li><i class="fas fa-check"></i> 10 Tracks</li>
-            <li><i class="fas fa-check"></i> 1 Song</li>
-            <li><i class="fas fa-check"></i> 3 Revisions</li>
-            <li><i class="fas fa-check"></i> 3 Days Delivery</li>
-          </ul>
-          <a href="#" class="btn btn-outline" style="width:100%;text-align:center;">Select Plan</a>
+          <div class="feature-icon">🎵</div>
+          <h3>Glasbeni stil</h3>
+          <p class="feature-desc">Z glasbenim stilom in aranžmajem, navdihnjenim po znanih skladbah, ki jih izbereš ti.</p>
         </div>
 
         <div class="pricing-card featured">
-          <span class="featured-badge">Most Popular</span>
-          <h3>Platinume</h3>
-          <div class="price"><sup>$</sup>68</div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Mixing</li>
-            <li><i class="fas fa-check"></i> Mastering</li>
-            <li><i class="fas fa-check"></i> 22 Tracks</li>
-            <li><i class="fas fa-check"></i> 1 Song</li>
-            <li><i class="fas fa-check"></i> 2 Revisions</li>
-            <li><i class="fas fa-check"></i> 5 Days Delivery</li>
-          </ul>
-          <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Select Plan</a>
+          <span class="featured-badge">Jedro pesmi</span>
+          <div class="feature-icon">🎤</div>
+          <h3>Vokal</h3>
+          <p class="feature-desc">Z vokalom, ki zelo prepričljivo ujame značaj in občutek izbranega izvajalca.</p>
         </div>
 
         <div class="pricing-card">
-          <h3>Premium</h3>
-          <div class="price"><sup>$</sup>90</div>
-          <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Mixing</li>
-            <li><i class="fas fa-check"></i> Mastering</li>
-            <li><i class="fas fa-check"></i> 35 Tracks</li>
-            <li><i class="fas fa-check"></i> 1 Song</li>
-            <li><i class="fas fa-check"></i> 2 Revisions</li>
-            <li><i class="fas fa-check"></i> 7 Days Delivery</li>
-          </ul>
-          <a href="#" class="btn btn-outline" style="width:100%;text-align:center;">Select Plan</a>
+          <div class="feature-icon">✍️</div>
+          <h3>Besedilo</h3>
+          <p class="feature-desc">Z unikatnim besedilom, napisanim posebej zate.</p>
         </div>
 
+      </div>
+      <div class="section-outro">
+        <p>Rezultat je pesem, ki zveni domače in znano,<br />a hkrati nosi tvojo osebno zgodbo in sporočilo.</p>
       </div>
     </div>
   </section>
 
-  <!-- TRACKS -->
-  <section class="section tracks" id="tracks">
+  <!-- OCCASIONS -->
+  <section class="section occasions center-section" id="occasions">
     <div class="container">
-      <div class="tracks-header">
-        <div>
-          <h2 class="section-title">New <span>Tracks</span></h2>
-          <div class="section-divider" style="margin-bottom:0;"></div>
+      <h2 class="section-title">Popolno za vse <span>posebne priložnosti</span></h2>
+      <div class="section-divider"></div>
+      <div class="occasions-grid">
+        <div class="occasion-card">
+          <span class="occasion-emoji">❤️</span>
+          <h4>Poroke in obletnice</h4>
         </div>
-        <a href="#" class="view-all">View All</a>
+        <div class="occasion-card">
+          <span class="occasion-emoji">🎂</span>
+          <h4>Rojstne dneve</h4>
+        </div>
+        <div class="occasion-card">
+          <span class="occasion-emoji">💑</span>
+          <h4>Romantičen poklon punci ali fantu</h4>
+        </div>
+        <div class="occasion-card">
+          <span class="occasion-emoji">👨‍👩‍👧‍👦</span>
+          <h4>Družinske trenutke</h4>
+        </div>
+        <div class="occasion-card">
+          <span class="occasion-emoji">🎉</span>
+          <h4>Presenečenja, zahvale ali spomine</h4>
+        </div>
+        <div class="occasion-card">
+          <span class="occasion-emoji">✨</span>
+          <h4>Katerokoli drugo priložnost, ki ti nekaj pomeni</h4>
+        </div>
       </div>
-      <div class="track-list">
+      <div class="section-outro">
+        <p>Ti deliš idejo in občutke,<br />mi pa jih pretvorimo v glasbeno doživetje, ki se dotakne.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="track-item">
+  <!-- LISTEN -->
+  <section class="section listen" id="listen">
+    <div class="container">
+      <h2 class="section-title">Prisluhni <span>primerom</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">Vsaka pesem je zgodba zase in prikazuje, kako močno lahko glasba poudari čustva.</p>
+
+      <div class="track-list" id="trackList">
+        <div class="track-item" data-src="src/music/Lukac%20Love%20Veronika%20(Poklon%20Punci).mp3">
           <span class="track-num">01</span>
           <div class="track-play"><i class="fas fa-play"></i></div>
-          <img class="track-cover" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&auto=format&fit=crop" alt="Cyber Tokyo" />
           <div class="track-info">
-            <h3>Cyber Tokyo</h3>
-            <span class="genre">Lo-Fi Hip Hop</span>
-          </div>
-          <div class="track-actions">
-            <a href="#"><i class="fas fa-heart"></i></a>
-            <a href="#"><i class="fas fa-plus"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+            <h3>Lukac Love Veronika</h3>
+            <span class="genre">Poklon Punci</span>
           </div>
           <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
-          <span class="track-duration">03:42</span>
+          <span class="track-duration">--:--</span>
         </div>
 
-        <div class="track-item">
+        <div class="track-item" data-src="src/music/Run%20Boy%20Run!%20(Pesen%20za%20spomin%20na%20mladost).mp3">
           <span class="track-num">02</span>
           <div class="track-play"><i class="fas fa-play"></i></div>
-          <img class="track-cover" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&auto=format&fit=crop" alt="Red Laser" />
           <div class="track-info">
-            <h3>Red Laser</h3>
-            <span class="genre">Trap</span>
-          </div>
-          <div class="track-actions">
-            <a href="#"><i class="fas fa-heart"></i></a>
-            <a href="#"><i class="fas fa-plus"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+            <h3>Run Boy Run!</h3>
+            <span class="genre">Pesen za spomin na mladost</span>
           </div>
           <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
-          <span class="track-duration">02:58</span>
+          <span class="track-duration">--:--</span>
         </div>
 
-        <div class="track-item">
+        <div class="track-item" data-src="src/music/Pesem%20za%20Privat%20zabavo.mp3">
           <span class="track-num">03</span>
           <div class="track-play"><i class="fas fa-play"></i></div>
-          <img class="track-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&auto=format&fit=crop" alt="Dreams" />
           <div class="track-info">
-            <h3>Dreams</h3>
-            <span class="genre">Soul, Pop</span>
-          </div>
-          <div class="track-actions">
-            <a href="#"><i class="fas fa-heart"></i></a>
-            <a href="#"><i class="fas fa-plus"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+            <h3>Pesem za Privat zabavo</h3>
+            <span class="genre">Zabava</span>
           </div>
           <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
-          <span class="track-duration">04:11</span>
+          <span class="track-duration">--:--</span>
         </div>
 
-        <div class="track-item">
+        <div class="track-item" data-src="src/music/Naja%20(18.RD).mp3">
           <span class="track-num">04</span>
           <div class="track-play"><i class="fas fa-play"></i></div>
-          <img class="track-cover" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=100&auto=format&fit=crop" alt="Neon Pulse" />
           <div class="track-info">
-            <h3>Neon Pulse</h3>
-            <span class="genre">Electronic</span>
-          </div>
-          <div class="track-actions">
-            <a href="#"><i class="fas fa-heart"></i></a>
-            <a href="#"><i class="fas fa-plus"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+            <h3>Naja</h3>
+            <span class="genre">18. Rojstni dan</span>
           </div>
           <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
-          <span class="track-duration">03:27</span>
+          <span class="track-duration">--:--</span>
         </div>
 
-        <div class="track-item">
+        <div class="track-item" data-src="src/music/Denisss%20(RD).mp3">
           <span class="track-num">05</span>
           <div class="track-play"><i class="fas fa-play"></i></div>
-          <img class="track-cover" src="https://images.unsplash.com/photo-1499415479124-43c32433a620?w=100&auto=format&fit=crop" alt="Midnight Run" />
           <div class="track-info">
-            <h3>Midnight Run</h3>
-            <span class="genre">R&amp;B</span>
-          </div>
-          <div class="track-actions">
-            <a href="#"><i class="fas fa-heart"></i></a>
-            <a href="#"><i class="fas fa-plus"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+            <h3>Denisss</h3>
+            <span class="genre">Rojstni dan</span>
           </div>
           <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
-          <span class="track-duration">03:55</span>
+          <span class="track-duration">--:--</span>
         </div>
 
+        <div class="track-item" data-src="src/music/Beker%20(50.RD).mp3">
+          <span class="track-num">06</span>
+          <div class="track-play"><i class="fas fa-play"></i></div>
+          <div class="track-info">
+            <h3>Beker</h3>
+            <span class="genre">50. Rojstni dan</span>
+          </div>
+          <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
+          <span class="track-duration">--:--</span>
+        </div>
+      </div>
+
+      <!-- Global player bar -->
+      <div class="player-bar" id="playerBar">
+        <div class="player-bar-inner">
+          <div class="player-bar-info">
+            <span class="player-bar-title" id="playerTitle">—</span>
+            <span class="player-bar-genre" id="playerGenre"></span>
+          </div>
+          <div class="player-bar-controls">
+            <button class="ctrl-btn" id="playerPrev"><i class="fas fa-step-backward"></i></button>
+            <button class="ctrl-btn play-btn" id="playerPlayPause"><i class="fas fa-play" id="playerIcon"></i></button>
+            <button class="ctrl-btn" id="playerNext"><i class="fas fa-step-forward"></i></button>
+          </div>
+          <div class="player-bar-progress">
+            <span class="player-bar-time" id="playerCurrent">00:00</span>
+            <div class="progress-bar-wrap" id="playerProgress">
+              <div class="progress-bar-fill" id="playerFill"></div>
+            </div>
+            <span class="player-bar-time" id="playerDuration">00:00</span>
+          </div>
+          <div class="player-bar-volume">
+            <button class="ctrl-btn" id="playerMute"><i class="fas fa-volume-up" id="playerVolIcon"></i></button>
+            <input type="range" id="playerVolume" min="0" max="1" step="0.05" value="0.8" />
+          </div>
+        </div>
+      </div>
+      <audio id="audioPlayer" preload="metadata"></audio>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section why-us center-section" id="why">
+    <div class="container">
+      <h2 class="section-title">Zakaj izbrati <span>773Ai Music Production?</span></h2>
+      <div class="section-divider"></div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <i class="fas fa-check"></i>
+          <span>Glasba, navdihnjena po znanem zvoku</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check"></i>
+          <span>Prepričljiv in čustven vokalni izraz</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check"></i>
+          <span>Popolnoma personalizirano besedilo</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check"></i>
+          <span>Hiter in enostaven proces naročila</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check"></i>
+          <span>Darilo, ki pusti močan vtis</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check"></i>
+          <span>Spomin, ki ostane</span>
+        </div>
+      </div>
+      <div class="section-outro section-outro--highlight">
+        <p>To ni le pesem.<br /><strong>To je tvoja zgodba, povedana skozi glasbo.</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section about" id="about">
+  <!-- CONTACT -->
+  <section class="section networks center-section" id="contact">
     <div class="container">
-      <div class="about-inner">
-        <div class="about-img-wrap">
-          <img class="about-img"
-            src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=600&auto=format&fit=crop"
-            alt="Sound Engineer" />
-          <div class="about-img-badge">
-            <span class="years">12</span>
-            <span class="years-label">Years<br/>Experience</span>
-          </div>
-        </div>
-        <div class="about-text">
-          <h2 class="section-title">About <span>Me</span></h2>
-          <div class="section-divider"></div>
-          <blockquote>
-            "If I can play one note and make you cry, then that's better than those fancy dancers playing twenty notes."
-          </blockquote>
-          <p>
-            Southern Avenue is a Memphis street that runs from the easternmost part of the city limits all the way to Soulsville, the original home of Stax Records.
-          </p>
-          <p>
-            Southern Avenue is also the name of a fiery young Memphis quintet that embodies its home city's soul, blues and gospel traditions through a sound that is entirely their own.
-          </p>
-          <div class="about-stats">
-            <div class="about-stat">
-              <span class="val">1.2K</span>
-              <span class="key">Tracks</span>
-            </div>
-            <div class="about-stat">
-              <span class="val">340</span>
-              <span class="key">Albums</span>
-            </div>
-            <div class="about-stat">
-              <span class="val">98%</span>
-              <span class="key">Satisfaction</span>
-            </div>
-          </div>
-          <div class="skills-list">
-            <div class="skill-row">
-              <div class="skill-label"><span>Mixing</span><span>95%</span></div>
-              <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>Mastering</span><span>90%</span></div>
-              <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-label"><span>Sound Design</span><span>85%</span></div>
-              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-            </div>
-          </div>
-          <a href="#" class="btn btn-primary">Download Resume</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO -->
-  <section class="video-section" id="video">
-    <div class="container">
-      <div class="video-inner">
-        <div class="video-text">
-          <h2 class="section-title">Music Production <span>Tutorial</span></h2>
-          <div class="section-divider"></div>
-          <p>
-            Watch behind-the-scenes footage and learn the techniques used in professional mixing and mastering sessions. From signal flow to final delivery.
-          </p>
-          <a href="https://www.youtube.com/watch?v=-B7-Vcdlld8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <i class="fas fa-play" style="margin-right:8px;font-size:0.7rem;"></i>Watch on YouTube
+      <h2 class="section-title">Naroči <span>svojo pesem</span></h2>
+      <div class="section-divider"></div>
+      <div class="contact-block">
+        <p class="contact-intro">Če želiš ustvariti nekaj res posebnega, nas kontaktiraj:</p>
+        <div class="contact-cards">
+          <a href="mailto:773musicpro@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <span class="contact-card-label">E-mail</span>
+            <span class="contact-card-value">773musicpro@gmail.com</span>
+          </a>
+          <a href="tel:+38631670246" class="contact-card">
+            <i class="fas fa-phone"></i>
+            <span class="contact-card-label">Telefon</span>
+            <span class="contact-card-value">031 670 246</span>
           </a>
         </div>
-        <div class="video-embed-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/-B7-Vcdlld8"
-            title="Music Production Tutorial"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NETWORKS -->
-  <section class="section networks" id="contact">
-    <div class="container">
-      <h2 class="section-title">Net<span>works</span></h2>
-      <div class="section-divider"></div>
-      <div class="networks-inner">
-        <div class="networks-text">
-          <p>
-            Audio player software is used to play back sound recordings in one of the many formats available for computers today.
-          </p>
-          <div class="social-grid">
-            <a class="social-link" href="#"><i class="fab fa-soundcloud"></i><span>SoundCloud</span></a>
-            <a class="social-link" href="#"><i class="fab fa-spotify"></i><span>Spotify</span></a>
-            <a class="social-link" href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a>
-            <a class="social-link" href="#"><i class="fab fa-youtube"></i><span>YouTube</span></a>
-            <a class="social-link" href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-            <a class="social-link" href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-            <a class="social-link" href="#"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
-            <a class="social-link" href="#"><i class="fab fa-apple"></i><span>Apple Music</span></a>
-          </div>
-          <div class="contact-info">
-            <p class="contact-label">Contact</p>
-            <p class="contact-email">INFO@MUSICISLIFE.COM</p>
-          </div>
-        </div>
-        <div class="networks-aside">
-          <div class="waveform-widget">
-            <div class="waveform-bars" id="waveform"></div>
-            <p class="waveform-label">Live Waveform Preview</p>
-          </div>
-          <div class="availability-widget">
-            <p class="availability-label">Availability</p>
-            <div class="availability-row">
-              <span class="status-dot"></span>
-              <span class="status-text">Currently accepting new projects</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="section newsletter">
-    <div class="container">
-      <div class="newsletter-inner">
-        <div class="newsletter-text">
-          <h2 class="section-title">Stay In <span>Touch</span></h2>
-          <div class="section-divider"></div>
-          <p>Sign up for new releases to your inbox every month.</p>
-        </div>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required />
-          <button type="submit">Subscribe</button>
-        </form>
+        <p class="contact-cta">Piši ali pokliči in skupaj bomo ustvarili unikatno glasbeno presenečenje.</p>
       </div>
     </div>
   </section>
@@ -412,12 +299,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="container inner">
-      <a href="#" class="logo">Vyrva<span>.</span></a>
-      <p class="copy">&copy; By Jellythemes 2023</p>
+      <a href="#" class="logo">773MusicPro<span>.</span></a>
+      <p class="copy">🎶 Navdih znanega. Moč osebne zgodbe. Glasba po naročilu.</p>
       <ul class="foot-links">
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a target="_blank" href="https://fondadigital.com">Izdelava Fondadigital.com</a></li>
       </ul>
     </div>
   </footer>

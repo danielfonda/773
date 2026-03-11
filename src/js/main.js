@@ -13,141 +13,150 @@ document.querySelectorAll('.mob-link').forEach(link => {
 });
 
 // ============================
-// HERO PLAYER
+// AUDIO PLAYER
 // ============================
 
-let playing = false;
-let timeElapsed = 0;
-const totalSeconds = 215; // 03:35
-const heroPlayBtn = document.getElementById('heroPlay');
-const heroPlayIcon = document.getElementById('heroPlayIcon');
-const heroFill = document.getElementById('heroFill');
-const heroHandle = document.getElementById('heroHandle');
-const heroTimeEl = document.getElementById('heroTime');
-let ticker;
+const audio = document.getElementById('audioPlayer');
+const trackItems = document.querySelectorAll('.track-item[data-src]');
+const playerTitle = document.getElementById('playerTitle');
+const playerGenre = document.getElementById('playerGenre');
+const playerIcon = document.getElementById('playerIcon');
+const playerPlayPause = document.getElementById('playerPlayPause');
+const playerFill = document.getElementById('playerFill');
+const playerProgress = document.getElementById('playerProgress');
+const playerCurrent = document.getElementById('playerCurrent');
+const playerDuration = document.getElementById('playerDuration');
+const playerPrev = document.getElementById('playerPrev');
+const playerNext = document.getElementById('playerNext');
+const playerMute = document.getElementById('playerMute');
+const playerVolIcon = document.getElementById('playerVolIcon');
+const playerVolume = document.getElementById('playerVolume');
 
-function padZ(n) {
-  return n < 10 ? '0' + n : '' + n;
+let currentIndex = -1;
+
+function formatTime(s) {
+  if (!s || isNaN(s)) return '00:00';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return (m < 10 ? '0' + m : m) + ':' + (sec < 10 ? '0' + sec : sec);
 }
 
-function updatePlayerUI() {
-  const pct = (timeElapsed / totalSeconds) * 100;
-  heroFill.style.width = pct + '%';
-  heroHandle.style.right = (100 - pct) + '%';
-  const m = Math.floor(timeElapsed / 60);
-  const s = timeElapsed % 60;
-  heroTimeEl.textContent = padZ(m) + ':' + padZ(s);
-}
+function loadTrack(index, autoplay) {
+  if (index < 0 || index >= trackItems.length) return;
+  currentIndex = index;
+  const item = trackItems[index];
 
-heroPlayBtn.addEventListener('click', () => {
-  playing = !playing;
-  heroPlayIcon.className = playing ? 'fas fa-pause' : 'fas fa-play';
-  if (playing) {
-    ticker = setInterval(() => {
-      timeElapsed = (timeElapsed + 1) % (totalSeconds + 1);
-      updatePlayerUI();
-    }, 1000);
-  } else {
-    clearInterval(ticker);
-  }
-});
-
-document.getElementById('heroProgress').addEventListener('click', function (e) {
-  const pct = e.offsetX / this.offsetWidth;
-  timeElapsed = Math.round(pct * totalSeconds);
-  updatePlayerUI();
-});
-
-// ============================
-// TRACK LIST
-// ============================
-
-document.querySelectorAll('.track-item').forEach(item => {
-  item.addEventListener('click', function () {
-    // Reset all tracks
-    document.querySelectorAll('.track-item').forEach(i => {
-      i.querySelector('.track-play').innerHTML = '<i class="fas fa-play"></i>';
-      i.querySelector('.track-mini-fill').style.width = '0%';
-    });
-
-    // Activate clicked track
-    this.querySelector('.track-play').innerHTML = '<i class="fas fa-pause"></i>';
-
-    const fill = this.querySelector('.track-mini-fill');
-    fill.style.transition = 'none';
-    fill.style.width = '0%';
-    setTimeout(() => {
-      fill.style.transition = 'width 8s linear';
-      fill.style.width = '70%';
-    }, 50);
+  // Highlight active row
+  trackItems.forEach(t => {
+    t.classList.remove('active');
+    t.querySelector('.track-play').innerHTML = '<i class="fas fa-play"></i>';
+    t.querySelector('.track-mini-fill').style.width = '0%';
   });
-});
+  item.classList.add('active');
 
-// ============================
-// COUNTER ANIMATION
-// ============================
+  // Set source
+  audio.src = item.dataset.src;
+  playerTitle.textContent = item.querySelector('.track-info h3').textContent;
+  playerGenre.textContent = item.querySelector('.genre').textContent;
+  playerFill.style.width = '0%';
+  playerCurrent.textContent = '00:00';
 
-const counters = document.querySelectorAll('.number[data-target]');
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = +el.dataset.target;
-      const step = Math.ceil(target / 60);
-      let current = 0;
+  if (autoplay) {
+    audio.play();
+    playerIcon.className = 'fas fa-pause';
+    item.querySelector('.track-play').innerHTML = '<i class="fas fa-pause"></i>';
+  }
+}
 
-      const timer = setInterval(() => {
-        current = Math.min(current + step, target);
-        el.textContent = current.toLocaleString();
-        if (current >= target) clearInterval(timer);
-      }, 25);
-
-      counterObserver.unobserve(el);
+// Click a track row
+trackItems.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    const wasPlaying = currentIndex === i && !audio.paused;
+    if (wasPlaying) {
+      audio.pause();
+      playerIcon.className = 'fas fa-play';
+      item.querySelector('.track-play').innerHTML = '<i class="fas fa-play"></i>';
+    } else if (currentIndex === i) {
+      audio.play();
+      playerIcon.className = 'fas fa-pause';
+      item.querySelector('.track-play').innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+      loadTrack(i, true);
     }
   });
-}, { threshold: 0.5 });
+});
 
-counters.forEach(c => counterObserver.observe(c));
-
-// ============================
-// WAVEFORM ANIMATION
-// ============================
-
-const wf = document.getElementById('waveform');
-if (wf) {
-  for (let i = 0; i < 48; i++) {
-    const bar = document.createElement('div');
-    const h = 10 + Math.random() * 60;
-    bar.style.cssText = `width:4px;background:#e8c84a;border-radius:2px;height:${h}px;opacity:${0.3 + Math.random() * 0.7};transition:height 0.4s ease;`;
-    wf.appendChild(bar);
+// Play/pause button
+playerPlayPause.addEventListener('click', () => {
+  if (currentIndex === -1) { loadTrack(0, true); return; }
+  if (audio.paused) {
+    audio.play();
+    playerIcon.className = 'fas fa-pause';
+    trackItems[currentIndex].querySelector('.track-play').innerHTML = '<i class="fas fa-pause"></i>';
+  } else {
+    audio.pause();
+    playerIcon.className = 'fas fa-play';
+    trackItems[currentIndex].querySelector('.track-play').innerHTML = '<i class="fas fa-play"></i>';
   }
+});
 
-  setInterval(() => {
-    wf.querySelectorAll('div').forEach(bar => {
-      bar.style.height = (10 + Math.random() * 60) + 'px';
-    });
-  }, 400);
-}
+// Prev / Next
+playerPrev.addEventListener('click', () => {
+  if (currentIndex <= 0) loadTrack(trackItems.length - 1, true);
+  else loadTrack(currentIndex - 1, true);
+});
+playerNext.addEventListener('click', () => {
+  if (currentIndex >= trackItems.length - 1) loadTrack(0, true);
+  else loadTrack(currentIndex + 1, true);
+});
 
-// ============================
-// NEWSLETTER FORM
-// ============================
+// Time update
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  const pct = (audio.currentTime / audio.duration) * 100;
+  playerFill.style.width = pct + '%';
+  playerCurrent.textContent = formatTime(audio.currentTime);
 
-const newsletterForm = document.querySelector('.newsletter-form');
-if (newsletterForm) {
-  newsletterForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const input = this.querySelector('input');
-    const btn = this.querySelector('button');
-    btn.textContent = 'Subscribed!';
-    btn.style.background = '#4ade80';
-    input.value = '';
-    setTimeout(() => {
-      btn.textContent = 'Subscribe';
-      btn.style.background = '';
-    }, 3000);
-  });
-}
+  // Mini progress on active track
+  if (currentIndex >= 0) {
+    trackItems[currentIndex].querySelector('.track-mini-fill').style.width = pct + '%';
+  }
+});
+
+// Duration loaded — update track row display
+audio.addEventListener('loadedmetadata', () => {
+  playerDuration.textContent = formatTime(audio.duration);
+  if (currentIndex >= 0) {
+    trackItems[currentIndex].querySelector('.track-duration').textContent = formatTime(audio.duration);
+  }
+});
+
+// Seek via progress bar
+playerProgress.addEventListener('click', (e) => {
+  if (!audio.duration) return;
+  const pct = e.offsetX / playerProgress.offsetWidth;
+  audio.currentTime = pct * audio.duration;
+});
+
+// Auto-next on end
+audio.addEventListener('ended', () => {
+  if (currentIndex < trackItems.length - 1) loadTrack(currentIndex + 1, true);
+  else {
+    playerIcon.className = 'fas fa-play';
+    trackItems[currentIndex].querySelector('.track-play').innerHTML = '<i class="fas fa-play"></i>';
+  }
+});
+
+// Volume
+playerVolume.addEventListener('input', () => {
+  audio.volume = parseFloat(playerVolume.value);
+  playerVolIcon.className = audio.volume === 0 ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+});
+
+playerMute.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  playerVolIcon.className = audio.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+});
 
 // ============================
 // SMOOTH SCROLL

@@ -19,6 +19,7 @@
 @use 'networks';
 @use 'newsletter';
 @use 'footer';
+@use 'custom';
 
 // 4. Responsive overrides (always last)
 @use 'responsive';

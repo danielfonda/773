@@ -8,13 +8,26 @@
   .about-inner,
   .video-inner,
   .networks-inner,
-  .newsletter-inner {
+  .newsletter-inner,
+  .listen-inner {
     grid-template-columns: 1fr;
   }
 
   .hero-text h1 { font-size: 3rem; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .contact-cards { grid-template-columns: 1fr; }
   .social-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .player-bar-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .player-bar-info { min-width: 100%; }
+  .player-bar-progress { min-width: 100%; order: 10; }
+  .player-bar-volume { display: none; }
 
   .stats-bar .inner {
     flex-wrap: wrap;
@@ -40,12 +53,22 @@
   .hero-text .cta-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
+
+  .occasions-grid { grid-template-columns: 1fr; }
 
   footer .inner {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+
+  .track-item {
+    flex-wrap: wrap;
+
+    .track-mini-progress {
+      width: 100%;
+    }
   }
 }
