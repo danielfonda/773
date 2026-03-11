@@ -1,0 +1,67 @@
+// ============================
+// LAYOUT HELPERS & BUTTONS
+// ============================
+@use 'variables' as *;
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-pad;
+}
+
+.section {
+  padding: $section-padding 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: $text-primary;
+  margin-bottom: 14px;
+
+  span {
+    color: $accent;
+  }
+}
+
+.section-divider {
+  width: 48px;
+  height: 3px;
+  background: $accent;
+  margin-bottom: 40px;
+}
+
+// ---- Buttons ----
+.btn {
+  display: inline-block;
+  padding: 14px 34px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: $transition-base;
+
+  &-primary {
+    background: $accent;
+    color: $bg-base;
+    border: 2px solid $accent;
+
+    &:hover {
+      background: transparent;
+      color: $accent;
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    color: $text-primary;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-left: 14px;
+
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+}

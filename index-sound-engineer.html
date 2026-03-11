@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vyrva – Sound Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="dist/css/main.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container inner">
+      <a href="#" class="logo">Vyrva<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pricing">Services</a></li>
+        <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="#"><i class="fab fa-soundcloud"></i></a>
+        <a href="#"><i class="fab fa-spotify"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="navClose"><i class="fas fa-times"></i></button>
+    <a href="#home" class="mob-link">Home</a>
+    <a href="#pricing" class="mob-link">Services</a>
+    <a href="#tracks" class="mob-link">Tracks</a>
+    <a href="#about" class="mob-link">About</a>
+    <a href="#contact" class="mob-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Professional Sound Engineer</p>
+        <h1>Mixing &amp;<br /><em>Mastering</em><br />Studio</h1>
+        <p>World-class mixing and mastering services tailored to your vision. From Lo-Fi Hip Hop to cinematic soundscapes, bring your music to life.</p>
+        <div class="cta-group">
+          <a href="#pricing" class="btn btn-primary">Get Started</a>
+          <a href="#tracks" class="btn btn-outline">Listen Now</a>
+        </div>
+      </div>
+
+      <!-- Featured player card -->
+      <div class="player-card">
+        <div class="album-cover">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop" alt="Overexposed album" />
+          <span class="album-badge">Featured</span>
+        </div>
+        <div class="album-info">
+          <h4>Overexposed</h4>
+          <span>Album by Maroon 5</span>
+        </div>
+        <div class="player-controls">
+          <span class="track-name">Nightcrawler</span>
+          <div class="progress-bar-wrap" id="heroProgress">
+            <div class="progress-bar-fill" id="heroFill"></div>
+            <div class="progress-bar-handle" id="heroHandle"></div>
+          </div>
+          <div class="player-row">
+            <button class="ctrl-btn"><i class="fas fa-random"></i></button>
+            <button class="ctrl-btn"><i class="fas fa-step-backward"></i></button>
+            <button class="ctrl-btn play-btn" id="heroPlay">
+              <i class="fas fa-play" id="heroPlayIcon"></i>
+            </button>
+            <button class="ctrl-btn"><i class="fas fa-step-forward"></i></button>
+            <button class="ctrl-btn"><i class="fas fa-redo"></i></button>
+            <span class="time-display"><span id="heroTime">00:00</span> / 03:35</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container inner">
+      <div class="stat-item">
+        <span class="number" data-target="1200">0</span>
+        <span class="label">Tracks Mixed</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-target="340">0</span>
+        <span class="label">Albums Mastered</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-target="98">0</span>
+        <span class="label">Happy Clients</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-target="12">0</span>
+        <span class="label">Years Experience</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Mix &amp; <span>Mastering</span></h2>
+      <div class="section-divider"></div>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <div class="price"><sup>$</sup>49</div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Mixing</li>
+            <li><i class="fas fa-check"></i> Mastering</li>
+            <li><i class="fas fa-check"></i> 10 Tracks</li>
+            <li><i class="fas fa-check"></i> 1 Song</li>
+            <li><i class="fas fa-check"></i> 3 Revisions</li>
+            <li><i class="fas fa-check"></i> 3 Days Delivery</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width:100%;text-align:center;">Select Plan</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <span class="featured-badge">Most Popular</span>
+          <h3>Platinume</h3>
+          <div class="price"><sup>$</sup>68</div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Mixing</li>
+            <li><i class="fas fa-check"></i> Mastering</li>
+            <li><i class="fas fa-check"></i> 22 Tracks</li>
+            <li><i class="fas fa-check"></i> 1 Song</li>
+            <li><i class="fas fa-check"></i> 2 Revisions</li>
+            <li><i class="fas fa-check"></i> 5 Days Delivery</li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Select Plan</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Premium</h3>
+          <div class="price"><sup>$</sup>90</div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Mixing</li>
+            <li><i class="fas fa-check"></i> Mastering</li>
+            <li><i class="fas fa-check"></i> 35 Tracks</li>
+            <li><i class="fas fa-check"></i> 1 Song</li>
+            <li><i class="fas fa-check"></i> 2 Revisions</li>
+            <li><i class="fas fa-check"></i> 7 Days Delivery</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width:100%;text-align:center;">Select Plan</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section class="section tracks" id="tracks">
+    <div class="container">
+      <div class="tracks-header">
+        <div>
+          <h2 class="section-title">New <span>Tracks</span></h2>
+          <div class="section-divider" style="margin-bottom:0;"></div>
+        </div>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <div class="track-list">
+
+        <div class="track-item">
+          <span class="track-num">01</span>
+          <div class="track-play"><i class="fas fa-play"></i></div>
+          <img class="track-cover" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&auto=format&fit=crop" alt="Cyber Tokyo" />
+          <div class="track-info">
+            <h3>Cyber Tokyo</h3>
+            <span class="genre">Lo-Fi Hip Hop</span>
+          </div>
+          <div class="track-actions">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-plus"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
+          <span class="track-duration">03:42</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-num">02</span>
+          <div class="track-play"><i class="fas fa-play"></i></div>
+          <img class="track-cover" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&auto=format&fit=crop" alt="Red Laser" />
+          <div class="track-info">
+            <h3>Red Laser</h3>
+            <span class="genre">Trap</span>
+          </div>
+          <div class="track-actions">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-plus"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
+          <span class="track-duration">02:58</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-num">03</span>
+          <div class="track-play"><i class="fas fa-play"></i></div>
+          <img class="track-cover" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&auto=format&fit=crop" alt="Dreams" />
+          <div class="track-info">
+            <h3>Dreams</h3>
+            <span class="genre">Soul, Pop</span>
+          </div>
+          <div class="track-actions">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-plus"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
+          <span class="track-duration">04:11</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-num">04</span>
+          <div class="track-play"><i class="fas fa-play"></i></div>
+          <img class="track-cover" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=100&auto=format&fit=crop" alt="Neon Pulse" />
+          <div class="track-info">
+            <h3>Neon Pulse</h3>
+            <span class="genre">Electronic</span>
+          </div>
+          <div class="track-actions">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-plus"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
+          <span class="track-duration">03:27</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-num">05</span>
+          <div class="track-play"><i class="fas fa-play"></i></div>
+          <img class="track-cover" src="https://images.unsplash.com/photo-1499415479124-43c32433a620?w=100&auto=format&fit=crop" alt="Midnight Run" />
+          <div class="track-info">
+            <h3>Midnight Run</h3>
+            <span class="genre">R&amp;B</span>
+          </div>
+          <div class="track-actions">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-plus"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="track-mini-progress"><div class="track-mini-fill"></div></div>
+          <span class="track-duration">03:55</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img-wrap">
+          <img class="about-img"
+            src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=600&auto=format&fit=crop"
+            alt="Sound Engineer" />
+          <div class="about-img-badge">
+            <span class="years">12</span>
+            <span class="years-label">Years<br/>Experience</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title">About <span>Me</span></h2>
+          <div class="section-divider"></div>
+          <blockquote>
+            "If I can play one note and make you cry, then that's better than those fancy dancers playing twenty notes."
+          </blockquote>
+          <p>
+            Southern Avenue is a Memphis street that runs from the easternmost part of the city limits all the way to Soulsville, the original home of Stax Records.
+          </p>
+          <p>
+            Southern Avenue is also the name of a fiery young Memphis quintet that embodies its home city's soul, blues and gospel traditions through a sound that is entirely their own.
+          </p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="val">1.2K</span>
+              <span class="key">Tracks</span>
+            </div>
+            <div class="about-stat">
+              <span class="val">340</span>
+              <span class="key">Albums</span>
+            </div>
+            <div class="about-stat">
+              <span class="val">98%</span>
+              <span class="key">Satisfaction</span>
+            </div>
+          </div>
+          <div class="skills-list">
+            <div class="skill-row">
+              <div class="skill-label"><span>Mixing</span><span>95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span>Mastering</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span>Sound Design</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary">Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="video-inner">
+        <div class="video-text">
+          <h2 class="section-title">Music Production <span>Tutorial</span></h2>
+          <div class="section-divider"></div>
+          <p>
+            Watch behind-the-scenes footage and learn the techniques used in professional mixing and mastering sessions. From signal flow to final delivery.
+          </p>
+          <a href="https://www.youtube.com/watch?v=-B7-Vcdlld8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fas fa-play" style="margin-right:8px;font-size:0.7rem;"></i>Watch on YouTube
+          </a>
+        </div>
+        <div class="video-embed-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/-B7-Vcdlld8"
+            title="Music Production Tutorial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORKS -->
+  <section class="section networks" id="contact">
+    <div class="container">
+      <h2 class="section-title">Net<span>works</span></h2>
+      <div class="section-divider"></div>
+      <div class="networks-inner">
+        <div class="networks-text">
+          <p>
+            Audio player software is used to play back sound recordings in one of the many formats available for computers today.
+          </p>
+          <div class="social-grid">
+            <a class="social-link" href="#"><i class="fab fa-soundcloud"></i><span>SoundCloud</span></a>
+            <a class="social-link" href="#"><i class="fab fa-spotify"></i><span>Spotify</span></a>
+            <a class="social-link" href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+            <a class="social-link" href="#"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+            <a class="social-link" href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+            <a class="social-link" href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+            <a class="social-link" href="#"><i class="fab fa-tiktok"></i><span>TikTok</span></a>
+            <a class="social-link" href="#"><i class="fab fa-apple"></i><span>Apple Music</span></a>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Contact</p>
+            <p class="contact-email">INFO@MUSICISLIFE.COM</p>
+          </div>
+        </div>
+        <div class="networks-aside">
+          <div class="waveform-widget">
+            <div class="waveform-bars" id="waveform"></div>
+            <p class="waveform-label">Live Waveform Preview</p>
+          </div>
+          <div class="availability-widget">
+            <p class="availability-label">Availability</p>
+            <div class="availability-row">
+              <span class="status-dot"></span>
+              <span class="status-text">Currently accepting new projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h2 class="section-title">Stay In <span>Touch</span></h2>
+          <div class="section-divider"></div>
+          <p>Sign up for new releases to your inbox every month.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container inner">
+      <a href="#" class="logo">Vyrva<span>.</span></a>
+      <p class="copy">&copy; By Jellythemes 2023</p>
+      <ul class="foot-links">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>

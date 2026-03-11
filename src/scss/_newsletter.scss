@@ -1,0 +1,61 @@
+// ============================
+// NEWSLETTER
+// ============================
+@use 'variables' as *;
+
+.newsletter {
+  background: $bg-base;
+  border-top: 1px solid $border-faint;
+}
+
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.newsletter-text {
+  h2 { margin-bottom: 14px; }
+
+  p {
+    font-size: 0.88rem;
+    color: $text-dim;
+  }
+}
+
+.newsletter-form {
+  display: flex;
+
+  input {
+    flex: 1;
+    background: $bg-input;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    padding: 14px 20px;
+    color: $text-primary;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &::placeholder { color: $text-ghost; }
+    &:focus { border-color: $accent; }
+  }
+
+  button {
+    background: $accent;
+    color: $bg-base;
+    border: none;
+    padding: 14px 28px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0 2px 2px 0;
+    transition: background 0.3s;
+
+    &:hover { background: $text-primary; }
+  }
+}

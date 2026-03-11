@@ -1,0 +1,51 @@
+// ============================
+// RESPONSIVE
+// ============================
+@use 'variables' as *;
+
+@media (max-width: #{$bp-tablet}) {
+  .hero-inner,
+  .about-inner,
+  .video-inner,
+  .networks-inner,
+  .newsletter-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 { font-size: 3rem; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .stats-bar .inner {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .nav-links,
+  .nav-social { display: none; }
+  .nav-toggle { display: block; }
+
+  .about-img-badge { right: 0; }
+}
+
+@media (max-width: #{$bp-mobile}) {
+  .hero-text h1 { font-size: 2.2rem; }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .hero-text .cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer .inner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}

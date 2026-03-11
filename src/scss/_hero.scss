@@ -1,0 +1,188 @@
+// ============================
+// HERO
+// ============================
+@use 'variables' as *;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%),
+    url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&auto=format&fit=crop') center / cover no-repeat;
+  padding-top: 72px;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-pad;
+}
+
+.hero-text {
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $accent;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1.05;
+    color: $text-primary;
+    text-transform: uppercase;
+
+    em {
+      font-style: normal;
+      color: $accent;
+    }
+  }
+
+  p {
+    margin: 24px 0 36px;
+    color: $text-subtle;
+    font-size: 0.95rem;
+    max-width: 420px;
+  }
+}
+
+// ---- Featured player card ----
+.player-card {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid $border-subtle;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.album-cover {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  &:hover img { transform: scale(1.05); }
+}
+
+.album-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: $accent;
+  color: $bg-base;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+.album-info {
+  padding: 20px 24px;
+  border-bottom: 1px solid $border-subtle;
+
+  h4 {
+    color: $text-primary;
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  span {
+    font-size: 0.78rem;
+    color: $text-dim;
+  }
+}
+
+.player-controls {
+  padding: 20px 24px;
+}
+
+.track-name {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $accent;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.progress-bar-wrap {
+  background: rgba(255, 255, 255, 0.1);
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar-fill {
+  width: 40%;
+  height: 100%;
+  background: $accent;
+  border-radius: 2px;
+  transition: width 0.1s;
+}
+
+.progress-bar-handle {
+  position: absolute;
+  top: 50%;
+  right: 60%;
+  transform: translate(50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: $accent;
+  border-radius: 50%;
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ctrl-btn {
+  background: none;
+  border: none;
+  color: $text-dim;
+  font-size: 0.9rem;
+  padding: 2px;
+  transition: color 0.2s;
+
+  &:hover { color: $accent; }
+
+  &.play-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: $accent;
+    color: $bg-base;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+
+    &:hover { background: $text-primary; }
+  }
+}
+
+.time-display {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: $text-dim;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,97 @@
+// ============================
+// PRICING
+// ============================
+@use 'variables' as *;
+
+.pricing {
+  background: $bg-overlay;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.pricing-card {
+  background: $bg-card-2;
+  border: 1px solid $border-subtle;
+  border-radius: 6px;
+  padding: 40px 32px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: $accent;
+    box-shadow: 0 20px 50px rgba($accent, 0.1);
+  }
+
+  &.featured {
+    border-color: $accent;
+    box-shadow: 0 20px 50px rgba($accent, 0.12);
+    transform: translateY(-8px);
+  }
+
+  h3 {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $text-dim;
+    margin-bottom: 20px;
+  }
+}
+
+.featured-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $accent;
+  color: $bg-base;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 20px;
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: $font-heading;
+  color: $text-primary;
+  line-height: 1;
+  margin-bottom: 28px;
+
+  sup {
+    font-size: 1.4rem;
+    vertical-align: top;
+    margin-top: 8px;
+    color: $accent;
+  }
+}
+
+.pricing-features {
+  margin-bottom: 34px;
+  border-top: 1px solid $border-subtle;
+  padding-top: 24px;
+
+  li {
+    padding: 9px 0;
+    font-size: 0.83rem;
+    color: $text-subtle;
+    border-bottom: 1px solid $border-faint;
+
+    &:last-child { border-bottom: none; }
+
+    i {
+      font-size: 0.7rem;
+      color: $accent;
+      margin-right: 8px;
+    }
+  }
+}

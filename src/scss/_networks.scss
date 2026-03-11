@@ -1,0 +1,147 @@
+// ============================
+// NETWORKS / SOCIAL
+// ============================
+@use 'variables' as *;
+
+.networks {
+  background: $bg-overlay;
+}
+
+.networks-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.networks-text {
+  p {
+    font-size: 0.88rem;
+    color: $text-dim;
+    margin-bottom: 32px;
+  }
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px 10px;
+  background: $bg-input;
+  border: 1px solid $border-subtle;
+  border-radius: 4px;
+  transition: $transition-base;
+  color: $text-dim;
+
+  i { font-size: 1.3rem; }
+
+  span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &:hover {
+    background: $accent;
+    color: $bg-base;
+    border-color: $accent;
+    transform: translateY(-4px);
+  }
+}
+
+.contact-info {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid $border-subtle;
+
+  .contact-label {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $text-ghost;
+    margin-bottom: 8px;
+  }
+
+  .contact-email {
+    font-size: 1.05rem;
+    color: $accent;
+    font-family: $font-heading;
+    letter-spacing: 2px;
+  }
+}
+
+// ---- Waveform widget ----
+.waveform-widget {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: 6px;
+  padding: 32px;
+  text-align: center;
+
+  .waveform-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $text-ghost;
+    margin-top: 20px;
+  }
+}
+
+.waveform-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 80px;
+}
+
+// ---- Availability widget ----
+.availability-widget {
+  background: $bg-card;
+  border: 1px solid $border-subtle;
+  border-radius: 6px;
+  padding: 24px;
+
+  .availability-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $text-ghost;
+    margin-bottom: 12px;
+  }
+
+  .availability-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $success;
+    display: inline-block;
+    box-shadow: 0 0 8px $success;
+    flex-shrink: 0;
+  }
+
+  .status-text {
+    font-size: 0.85rem;
+    color: $text-subtle;
+  }
+}
+
+.networks-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

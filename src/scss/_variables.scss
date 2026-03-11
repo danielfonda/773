@@ -1,0 +1,39 @@
+// ============================
+// VARIABLES
+// ============================
+
+// Colors
+$accent:        #e8c84a;
+$bg-base:       #0d0d0d;
+$bg-dark:       #0a0a0a;
+$bg-card:       #141414;
+$bg-card-2:     #171717;
+$bg-input:      #1a1a1a;
+$bg-overlay:    #111;
+$text-primary:  #fff;
+$text-muted:    #ccc;
+$text-subtle:   #aaa;
+$text-dim:      #888;
+$text-faint:    #666;
+$text-ghost:    #555;
+$border-subtle: rgba(255, 255, 255, 0.07);
+$border-faint:  rgba(255, 255, 255, 0.05);
+$success:       #4ade80;
+
+// Typography
+$font-body:     'Poppins', sans-serif;
+$font-heading:  'Oswald', sans-serif;
+
+// Spacing
+$section-padding: 90px;
+$container-max:   1180px;
+$container-pad:   24px;
+
+// Transitions
+$transition-fast:   all 0.2s ease;
+$transition-base:   all 0.3s ease;
+$transition-slow:   all 0.5s ease;
+
+// Breakpoints
+$bp-tablet:  900px;
+$bp-mobile:  560px;
